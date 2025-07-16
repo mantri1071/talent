@@ -1,6 +1,9 @@
 import path from 'node:path';
 import react from '@vitejs/plugin-react';
 import { createLogger, defineConfig } from 'vite';
+// vite.config.js
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
 const isDev = process.env.NODE_ENV !== 'production';
 let inlineEditPlugin, editModeDevPlugin;
@@ -189,6 +192,7 @@ logger.error = (msg, options) => {
 	loggerError(msg, options);
 }
 
+
 export default defineConfig({
 	customLogger: logger,
 	plugins: [
@@ -203,6 +207,10 @@ export default defineConfig({
 		},
 		allowedHosts: true,
 	},
+
+	  base: '/IT-Now/', // Important for GitHub Pages
+      plugins: [react()],
+	  
 	resolve: {
 		extensions: ['.jsx', '.js', '.tsx', '.ts', '.json', ],
 		alias: {
