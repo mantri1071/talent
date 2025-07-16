@@ -191,7 +191,7 @@ logger.error = (msg, options) => {
 };
 
 export default defineConfig({
-	base: '/IT-Now/', // Important for GitHub Pages
+	base: '', // Important for GitHub Pages
 	customLogger: logger,
 	plugins: [
 		...(isDev ? [inlineEditPlugin(), editModeDevPlugin()] : []),
